@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,13 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('project_name');
-            $table->date('project_date');
+            $table->unsignedBigInteger('service_id');
+            $table->string('service_name');
+            $table->date('service_date');
             $table->string('author');
             $table->text('desc');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('services');
     }
 };

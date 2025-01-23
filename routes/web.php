@@ -7,10 +7,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/master', function () {
-    return view('master');
+Route::get('/home', function () {
+    return view('home');
 });
 
-Route::get('/mproject', function () {
-    return view('mproject');
+Route::get('/project', function () {
+    return view('project');
+});
+
+Route::get('/service', function () {
+    return view('service');
 });
